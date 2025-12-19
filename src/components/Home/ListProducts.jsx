@@ -32,7 +32,7 @@ export const ListProducts = () => {
 
       {loading ? (
         <div>
-          <h1>Cargando..</h1>
+          <h1>Cargando Gifs..</h1>
         </div>
       ) : (
         <div>

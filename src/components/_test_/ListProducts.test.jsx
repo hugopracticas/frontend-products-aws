@@ -19,7 +19,7 @@ describe("ListProducts component", () => {
 
     render(<ListProducts />);
 
-    expect(screen.getByText("Cargando..")).toBeInTheDocument();
+    expect(screen.getByText("Cargando Gifs..")).toBeInTheDocument();
   });
 
   test("debe renderizar la lista de productos", async () => {

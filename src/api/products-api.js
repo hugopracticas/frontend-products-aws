@@ -4,8 +4,8 @@ import axios from "axios";
 export const getProducts = async() => {
     try {
         const response = await axios({
-            //url: 'http://localhost:8080/api/products',
-            url: 'http://18.217.94.214:8080/api/products',
+            url: 'http://localhost:8080/api/products',
+            //url: 'http://18.217.94.214:8080/api/products',
             method: 'GET'
         })
         if(response.status !== 200){
