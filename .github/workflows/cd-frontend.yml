@@ -1,0 +1,26 @@
+name: CD Frontend (Deploy to EC2)
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            set -e
+            cd ~/apps/frontend-products
+            git pull
+            docker build -t frontend-products:latest .
+            docker stop frontend-products || true
+            docker rm frontend-products || true
+            docker run -d --name frontend-products -p 3000:80 frontend-products:latest
+            docker ps --filter "name=frontend-products"
