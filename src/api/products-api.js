@@ -5,7 +5,8 @@ export const getProducts = async() => {
     try {
         const response = await axios({
             //url: 'http://localhost:8080/api/products',
-            url: 'http://3.23.82.119:8080/api/products',
+            //url: 'http://3.23.82.119:8080/api/products',
+            url: 'http://3.23.82.119:3000/api/products',
             method: 'GET'
         })
         if(response.status !== 200){
