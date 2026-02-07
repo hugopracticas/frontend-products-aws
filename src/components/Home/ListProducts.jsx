@@ -28,7 +28,7 @@ export const ListProducts = () => {
 
   return (
     <>
-      <div>Lista de productos test</div>
+      <div>Lista de productos ya funciona</div>
 
       {loading ? (
         <div>
